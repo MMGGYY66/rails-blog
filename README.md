@@ -1,4 +1,4 @@
-<a name="#readme-top"></a>
+<a name="readme-top"></a>
 
 <div align="center">
   <h3><b>Rails Blog App</b></h3>
@@ -120,7 +120,7 @@ If you like this project please let me know
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thanks to microverse to asign me the homework
+I would like to thank microverse for the great resources shared.
 <br/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
