@@ -24,6 +24,14 @@ default: &default
 development:
   <<: *default
   database: rails_blog_development
+  adapter: postgresql
+  host: 127.0.0.1
+  username: postgres
+  password: Gg186988&
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+  port: 5433
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
