@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<main class='content container'>
+  <ul>
+    <%= render 'user' %>
+    <%= render 'bio' %>
+    <%= render 'posts/post' %>
+    <%= render 'posts/post' %>
+    <%= render 'posts/post' %>
+  </ul>
+  <div class="text-center">
+    <button class='btn btn-primary'>See all posts</button>
+  </div>
+</main>
