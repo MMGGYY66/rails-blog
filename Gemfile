@@ -6,6 +6,7 @@ ruby '3.2.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.7'
 
@@ -32,9 +33,6 @@ gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
