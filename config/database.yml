@@ -31,7 +31,7 @@ development:
   encoding: utf8
   pool: 5
   timeout: 5000
-  port: 5432
+  port: 5433
 
 # 127.0.0.1
   # The specified database role being used to connect to postgres.
@@ -74,7 +74,7 @@ test:
   encoding: utf8
   pool: 5
   timeout: 5000
-  port: 5432
+  port: 5433
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
