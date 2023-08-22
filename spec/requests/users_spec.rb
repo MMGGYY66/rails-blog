@@ -1,31 +1,35 @@
-require 'rails_helper'
+require_relative 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    it 'returns http success' do
-      get '/users/index'
-      expect(response).to have_http_status(:success)
+    it 'response status is success' do
+      get users_path
+      expect(response.status).to eq(200)
+    end
+    it 'index template was rendered' do
+      get users_path
+      expect(response).to render_template(:index)
+    end
+    it "response body includes the text 'List of users'" do
+      get users_path
+      expect(response.body).to include('List of users')
     end
   end
 
   describe 'GET /show' do
-    it 'returns http success' do
-      get '/users/show'
-      expect(response).to have_http_status(:success)
-    end
-  end
+    let!(:user) { User.create(name: 'John', posts_counter: 0) }
 
-  describe 'GET /_user' do
-    it 'returns http success' do
-      get '/users/_user'
-      expect(response).to have_http_status(:success)
+    it 'response status is success' do
+      get user_path(user.id)
+      expect(response.status).to eq(200)
     end
-  end
-
-  describe 'GET /_bio' do
-    it 'returns http success' do
-      get '/users/_bio'
-      expect(response).to have_http_status(:success)
+    it 'show template was rendered' do
+      get user_path(user.id)
+      expect(response).to render_template(:show)
+    end
+    it "response body includes the text 'Username'" do
+      get user_path(user.id)
+      expect(response.body).to include('Username')
     end
   end
 end
