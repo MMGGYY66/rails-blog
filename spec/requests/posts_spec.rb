@@ -1,52 +1,37 @@
-require_relative 'rails_helper'
+require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
+  let!(:user) { User.create(name: 'John', posts_counter: 0) }
+
   describe 'GET /index' do
-    it 'returns http success' do
-      get '/posts/index'
-      expect(response).to have_http_status(:success)
+    it 'response status is success' do
+      get user_posts_path(user)
+      expect(response.status).to eq(200)
+    end
+    it 'index template was rendered' do
+      get user_posts_path(user)
+      expect(response).to render_template(:index)
+    end
+    it "response body includes the text 'List of posts'" do
+      get user_posts_path(user)
+      expect(response.body).to include('List of posts')
     end
   end
 
   describe 'GET /show' do
-    it 'returns http success' do
-      get '/posts/show'
-      expect(response).to have_http_status(:success)
-    end
-  end
+    let!(:post) { Post.create(author: user, title: 'Post title', comments_counter: 0, likes_counter: 0) }
 
-  describe 'GET /new' do
-    it 'returns http success' do
-      get '/posts/new'
-      expect(response).to have_http_status(:success)
+    it 'response status is success' do
+      get user_post_path(user, post)
+      expect(response.status).to eq(200)
     end
-  end
-
-  describe 'GET /edit' do
-    it 'returns http success' do
-      get '/posts/edit'
-      expect(response).to have_http_status(:success)
+    it 'show template was rendered' do
+      get user_post_path(user, post)
+      expect(response).to render_template(:show)
     end
-  end
-
-  describe 'GET /_post' do
-    it 'returns http success' do
-      get '/posts/_post'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /_full' do
-    it 'returns http success' do
-      get '/posts/_full'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /_comment' do
-    it 'returns http success' do
-      get '/posts/_comment'
-      expect(response).to have_http_status(:success)
+    it "response body includes the text 'Post by'" do
+      get user_post_path(user, post)
+      expect(response.body).to include('Post by')
     end
   end
 end
