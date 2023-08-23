@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    @users = User.order(id: :asc)
+  end
 
-  def show; end
+  def show
+    @user = User.includes(:posts).find(params[:id])
+  end
 end
