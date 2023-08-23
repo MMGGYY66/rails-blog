@@ -1,23 +1,35 @@
 require 'rails_helper'
 
-RSpec.describe 'UsersController', type: :request do
-  let(:user) { User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
-
-  describe 'GET /users' do
-    it 'renders the index template and includes placeholder text' do
+RSpec.describe 'Users', type: :request do
+  describe 'GET /index' do
+    it 'response status is success' do
       get users_path
-      expect(response).to have_http_status(200)
+      expect(response.status).to eq(200)
+    end
+    it 'index template was rendered' do
+      get users_path
       expect(response).to render_template(:index)
-      expect(response.body).to include('<h5 class="card-title">Username</h5>')
+    end
+    it "response body includes the text 'List of users'" do
+      get users_path
+      expect(response.body).to include('List of users')
     end
   end
 
-  describe 'GET /users/:id' do
-    it 'renders the show template and includes placeholder text' do
+  describe 'GET /show' do
+    let!(:user) { User.create(name: 'John', posts_counter: 0) }
+
+    it 'response status is success' do
       get user_path(user.id)
-      expect(response).to have_http_status(200)
+      expect(response.status).to eq(200)
+    end
+    it 'show template was rendered' do
+      get user_path(user.id)
       expect(response).to render_template(:show)
-      expect(response.body).to include('<h5 class="card-title">Bio</h5>')
+    end
+    it "response body includes the text 'Bio'" do
+      get user_path(user.id)
+      expect(response.body).to include('Bio')
     end
   end
 end
