@@ -9,7 +9,11 @@ second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-
 
 third_user = User.create(name: ‘Hana’, photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Egypt.’)
 
-first_post = Post.create(author: first_user, title: 'Hello', text: 'here is my first post')
+fourth_user = User.create(name:  'Joseph', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Engineer 
+from USA.')
+
+# Create and save a post with title "Hello World", content "My first blog post!", and author Joseph's id (use fourth
+first_post = Post.create(author: third_user, title: 'Hello', text: 'here is my first post')
 
 second_post = Post.create(author: first_user, title: 'Welcome’, text:'here is my second post')
 
