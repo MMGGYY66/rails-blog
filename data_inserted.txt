@@ -12,29 +12,36 @@ third_user = User.create(name: ‘Hana’, photo: 'https://unsplash.com/photos/F
 fourth_user = User.create(name:  'Joseph', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Engineer 
 from USA.')
 
+============================
+===============================
 # Create and save a post with title "Hello World", content "My first blog post!", and author Joseph's id (use fourth
-first_post = Post.create(author: third_user, title: 'Hello', text: 'here is my first post')
 
-second_post = Post.create(author: first_user, title: 'Welcome’, text:'here is my second post')
+first_post = Post.create(author: third_user , title: 'Hello', text: 'here is my first post')
 
-third_post = Post.create(author: first_user, title: ‘My life’, text: 'This is my third post')
+second_post = Post.create(author: third_user, title: 'Welcome’, text:'here is my second post')
 
-fourth_post = Post.create(author: first_user, title: ‘My life in Egypt’, text: 'This is my fourth post')
+third_post = Post.create(author: third_user, title: ‘My life’, text: 'This is my third post')
+
+fourth_post = Post.create(author: third_user, title: ‘My life in Egypt’, text: 'This is my fourth post')
+
+===============================
+==============================
 
 # Create at least 6 posts comments for one of the posts you created by running the following code: 
 
 Comment.create(post: first_post, author: second_user, text: 'Hi Tom!' )
 
-Comment.create(post: second_post, author: second_user, text: ‘Awesome Tom!' )
+Comment.create(post: first_post, author: first_user, text: ‘Awesome Tom!' )
 
-Comment.create(post: third_post, author: second_user, text: ‘Creative Tom!' )
+Comment.create(post: first_post, author: third_user, text: ‘Creative Tom!' )
 
-Comment.create(post: fourth_post, author: second_user, text: ‘Great Tom!' )
+Comment.create(post: first_post, author: fourth_user, text: ‘Great Tom!' )
 
 Comment.create(post: first_post, author: second_user, text: ‘You can do it Tom!' )
 
-Comment.create(post: second_post, author: second_user, text: "waitingyourpost" )
+Comment.create(post: first_post, author: fourth_user, text: "waitingyourpost" )
 
+Comment.create(post: first_post, author: first_user, text: "waiting your post" )
 ====
 Use other CRUD methods to find, update and delete entities.
 
