@@ -16,9 +16,10 @@ class PostsController < ApplicationController
     @post = @current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html {redirect_to @post}
-    else
-      format.html { render :new }
+        format.html { redirect_to @post }
+      else
+        format.html { render :new }
+      end
     end
   end
 
@@ -27,4 +28,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
+end
