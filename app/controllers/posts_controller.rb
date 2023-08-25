@@ -13,17 +13,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to @post.author
+    @post = @current_user.posts.new(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html {redirect_to @post}
     else
-      render :new, status: :unprocessable_entity
+      format.html { render :new }
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:author_id, :title, :text)
+    params.require(:post).permit(:title, :text)
   end
-end
+
