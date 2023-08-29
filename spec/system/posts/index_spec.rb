@@ -16,15 +16,14 @@ describe 'Post index page', type: :system do
       @post5 = Post.create!(title: 'fifth post', text: 'here is my fifth post.', author: @user3)
 
       @comment1 = Comment.create!(text: 'Hi Tom!', author: @user2, post: @post1)
-      @comment2 = Comment.create!(text: 'Awesome Tom!', author: @user2, post: @post2)
+      @comment2 = Comment.create!(text: 'Awesome Tom!', author: @user3, post: @post3)
 
       @like1 = Like.create!(author: @user1, post: @post1)
     end
 
     it "expects to see the user's profile picture" do
-      visit user_posts_path(@user3)
-
-      expect(page).to have_css("img[src*='#{@user3.photo}']")
+      visit user_posts_path(@user1)
+      expect(page).to have_css("img[src='#{@user1.photo}']")
     end
 
     it "expects to see the user's username" do
@@ -40,46 +39,46 @@ describe 'Post index page', type: :system do
     end
 
     it "expects to see a post's title" do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
-      expect(page).to have_content(@post1.title)
+      expect(page).to have_content(@post3.title)
     end
 
     it "expects to see some of the post's body" do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
-      expect(page).to have_content(@post1.text)
+      expect(page).to have_content(@post3.text)
     end
 
     it 'expects to see the first comment on a post' do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
       expect(page).to have_content(@comment1.text)
     end
 
     it 'expects to see how many comments a post has' do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
       expect(page).to have_content("Comments #{@post1.comments.size}")
     end
 
     it 'expects to see how many likes a post has' do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
       expect(page).to have_content("Likes #{@post1.likes.size}")
     end
 
     it 'expects to see a section for pagination if there are more posts than fit on the view' do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
       expect(page).to have_content('Pagination')
     end
 
     it "expects on click on a post, it redirects me to that post's show page" do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user3)
 
-      click_link @post1.title
-      expect(page).to have_current_path(post_path(@post1))
+      click_link @post5.title
+      expect(page).to have_current_path(post_path(@post5))
     end
   end
 end

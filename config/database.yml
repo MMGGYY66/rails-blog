@@ -27,11 +27,11 @@ development:
   adapter: postgresql
   host: localhost
   username: postgres
-  password: asdf@123 #Gg186988& 
+  password: Gg186988& #asdf@123  
   encoding: utf8
   pool: 5
   timeout: 5000
-  port: 5432 # I changed it to work with my laptop. You can change it back to 5432
+  port: 5433 # I changed it to work with my laptop. You can change it back to 5432
 
 # 127.0.0.1
   # The specified database role being used to connect to postgres.
@@ -69,12 +69,12 @@ test:
   database: rails_blog_test
   host: localhost
   username: postgres
-  password: asdf@123 #Gg186988&
+  password: Gg186988& # asdf@123 #
   encoding: utf8
   encoding: utf8
   pool: 5
   timeout: 5000
-  port: 5432 # here also
+  port: 5433 # here also
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
