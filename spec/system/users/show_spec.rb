@@ -36,11 +36,6 @@ describe 'Users show page', type: :system do
 
     it "expects to see the user's first 3 posts" do
       visit user_path(@user3)
-
-      # expect(page).not_to have_content(@post1.title)
-      # expect(page).to have_content(@post3.title)
-      # expect(page).to have_content(@post4.title)
-      # expect(page).to have_content(@post5.title)
       expect(@user3.last_3_posts).to eq([@post5, @post4, @post3])
     end
 
