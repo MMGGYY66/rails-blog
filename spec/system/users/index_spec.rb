@@ -7,13 +7,14 @@ describe 'Users index page', type: :system do
                            photo: 'https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg', bio: 'Teacher from Mexico.')
       @user2 = User.create(name: 'Lilly',
                            photo: 'https://w7.pngwing.com/pngs/4/736/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon-thumbnail.png', bio: 'Teacher from Poland.')
-      @user2 = User.create(name: 'Hana', photo: 'https://livewiredemos.com/images/avatar.png',
+      @user3 = User.create(name: 'Hana', photo: 'https://livewiredemos.com/images/avatar.png',
                            bio: 'Doctor from PEgypt.')
 
-      @post1 = Post.create(title: 'Hello', text: 'here is my first post', author: @user3)
-      @post2 = Post.create(title: 'Welcome’, text: Nice to see you', text: nil, author: @user3)
-      @post3 = Post.create(title: 'Hello', text: 'here is my third post.', author: @user3)
-    end
+      @post1 = Post.create!(title: 'Hello', text: 'here is my first post', author: @user3)
+      @post3 = Post.create!(title: 'Hello', text: 'here is my third post.', author: @user3)
+      @post4 = Post.create!(title: 'fourth post', text: 'here is my fourth post.', author: @user3)
+      @post5 = Post.create!(title: 'fifth post', text: 'here is my fifth post.', author: @user3)
+  end
 
     it 'expects to see the username of all other users' do
       visit root_path
