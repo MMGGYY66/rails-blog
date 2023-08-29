@@ -14,7 +14,7 @@ describe 'Users index page', type: :system do
       @post3 = Post.create!(title: 'Hello', text: 'here is my third post.', author: @user3)
       @post4 = Post.create!(title: 'fourth post', text: 'here is my fourth post.', author: @user3)
       @post5 = Post.create!(title: 'fifth post', text: 'here is my fifth post.', author: @user3)
-  end
+    end
 
     it 'expects to see the username of all other users' do
       visit root_path
