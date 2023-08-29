@@ -7,12 +7,15 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
-
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Available Scripts](#available-scripts)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)  
+    - [Available Scripts](#available-scripts)
   - [Clone](#clone)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
@@ -36,6 +39,7 @@
     <li><a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a></li>
   </ul>
 </details>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Features -->
 
@@ -62,6 +66,7 @@
 To get a local copy up and use as a template, follow these steps.
 
 ### Clone <a name="clone"></a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 Clone this repository to your desired folder:
 
@@ -81,6 +86,15 @@ In the project directory, you can run:
 
 ### `rubocop -A`
 
+### Usage
+
+To run the project, execute the following command:
+```sh
+  rails db:drop
+  rails db:create
+  rails db:migrate
+  rails server
+```
 To fix all Linter error automatically
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -90,28 +104,57 @@ To fix all Linter error automatically
 ## 👥 Author <a name="authors"></a>
 
 👤 **Mohamed Gamil Eldimardash**
-
 - GitHub: [@github](https://github.com/MMGGYY66)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-eldimardash-0023a3b5/)
 - Twitter: [twitter](https://twitter.com/MOHAMEDELDIMARd)
 - Facebook: [facebook](https://www.facebook.com/MOHAMED.ELDIMARDASH/)
 - StackOverflow: [stackoverflow](https://stackoverflow.com/users/13605630/mohamed-gamil-eldimardash)
 
+👤 **Qurban Ali Safari**
+- 👤 GitHub:   [Ali-0111](https://github.com/Ali-0111)
+- 👤 Twitter:  [qurban_safari](https://twitter.com/qurban_safari)
+- 👤 LinkedIn: [Safari](https://www.linkedin.com/in/ali-safari-linked)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **UI**
+- **Exercise: API documentation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
+I welcome contributions to enhance the functionality and user experience of the Morse_Translator project. If you have any ideas, suggestions, or bug reports, feel free to open an issue or submit a pull request.
+
+If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive commit messages.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository, explaining your changes in detail.
+
+Please adhere to the coding conventions and guidelines specified in the project.
+
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FAQ -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **Can I use the project for any purpose?**
+
+  - Yes, you can use this files for anything you need
+
+- **Do I need to ask for permission?**
+
+  - No need to ask for permission.
+  
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please let me know
