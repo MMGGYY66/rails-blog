@@ -11,6 +11,8 @@ gem 'pry'
 
 gem 'pry-byebug'
 
+gem 'devise'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.7'
 
@@ -75,5 +77,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem "devise", "~> 4.9"
