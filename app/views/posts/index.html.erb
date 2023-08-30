@@ -9,7 +9,10 @@
       <% end %>
     <% end %>
   </ul>
+
   <div class="text-center">
-    <button class='btn btn-primary'>Pagination</button>
+    <%= link_to "Create New Post", new_user_post_path(@user), class: "button btn btn-primary" %>
+
+    <%= link_to "Pagination", users_path, class: "button btn btn-primary" %>
   </div>
 </main>

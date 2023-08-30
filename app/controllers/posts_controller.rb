@@ -13,13 +13,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @current_user.posts.new(post_params)
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post }
-      else
-        format.html { render :new }
-      end
+    @user = User.find(params[:user_id])
+    @post = Post.new(author: current_user, **post_params)
+
+    if @post.save
+      redirect_to post_path(@post), notice: 'Post was successfully created.'
+    else
+      flash.now[:error] = 'Failed to create the post.'
+      render :new
     end
   end
 
