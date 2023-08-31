@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash' %>
+    <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Reset Password", edit_user_registration_path %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

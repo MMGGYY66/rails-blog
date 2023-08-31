@@ -27,7 +27,7 @@ development:
   adapter: postgresql
   host: localhost
   username: postgres
-  password: Gg186988& #asdf@123  
+  password: Gg186988&
   encoding: utf8
   pool: 5
   timeout: 5000
@@ -69,7 +69,7 @@ test:
   database: rails_blog_test
   host: localhost
   username: postgres
-  password: Gg186988& # asdf@123 #
+  password: Gg186988&
   encoding: utf8
   encoding: utf8
   pool: 5
